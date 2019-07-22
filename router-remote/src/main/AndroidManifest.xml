@@ -1,0 +1,17 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+
+    package="com.okay.router.remote">
+
+    <application>
+
+        <service android:name=".RouterRemoteService"
+            android:process=":routerRemoteService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.okay.router.action.REMOTE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

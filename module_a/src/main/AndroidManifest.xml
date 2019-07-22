@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.module_a">
+
+    <application>
+        <activity android:name=".MainActivity" android:process=":MainActivity"/>
+        <activity android:name=".SecondActivity" android:process=":SecondActivity"/>
+        <activity android:name=".ThirdActivity" android:process=":ThirdActivity"></activity>
+    </application>
+
+</manifest>

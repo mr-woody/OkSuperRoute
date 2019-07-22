@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CheckLayout">
+        <attr name="cl_items" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="RadioLayout">
+        <attr name="rl_items" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="SeekLayout">
+        <attr name="sl_max" format="integer" />
+        <attr name="sl_info" format="string" />
+    </declare-styleable>
+
+    <attr name="progressBar" format="reference"/>
+
+    <declare-styleable name="ProgressBar">
+        <attr name="pb_progressDrawable" format="reference"/>
+        <attr name="pb_normalDrawable" format="reference"/>
+        <attr name="pb_drawableSize" format="dimension"/>
+        <attr name="pb_firstDuration" format="integer"/>
+        <attr name="pb_firstMinDuration" format="integer"/>
+        <attr name="pb_firstProgress" format="integer"/>
+        <attr name="pb_secondDuration" format="integer"/>
+        <attr name="pb_secondProgress" format="integer"/>
+        <attr name="pb_thirdDuration" format="integer"/>
+        <attr name="pb_progress" format="float"/>
+        <attr name="pb_max" format="integer"/>
+        <attr name="pb_min" format="integer"/>
+    </declare-styleable>
+</resources>

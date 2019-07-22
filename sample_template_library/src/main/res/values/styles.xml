@@ -1,0 +1,28 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="SampleAppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!--取消原生title-->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!--设定全局分隔线颜色-->
+        <item name="android:listDivider">@drawable/list_divider_drawable</item>
+    </style>
+
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <style name="ProgressBar">
+        <item name="pb_firstDuration">2000</item>
+        <item name="pb_firstMinDuration">1000</item>
+        <item name="pb_secondDuration">6000</item>
+        <item name="pb_firstProgress">70</item>
+        <item name="pb_secondProgress">90</item>
+        <item name="pb_thirdDuration">10000</item>
+        <item name="pb_drawableSize">2dp</item>
+        <item name="pb_progressDrawable">?colorAccent</item>
+        <item name="pb_max">100</item>
+    </style>
+</resources>

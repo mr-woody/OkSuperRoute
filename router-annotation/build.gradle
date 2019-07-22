@@ -1,0 +1,9 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+dependencies {
+}
+
+targetCompatibility = '1.7'
+sourceCompatibility = '1.7'
+

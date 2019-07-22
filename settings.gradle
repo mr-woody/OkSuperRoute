@@ -1,0 +1,2 @@
+include  ':app', ':module_a', ':module_b',':common_service',':sample_template_library',
+         ':router-api', ':router-annotation', ':router-compiler', ':router-remote'
