@@ -51,7 +51,7 @@ dependencies {
 
 ```
 @RouteConfig(
-	baseUrl = "okay://page/", // 路由前缀：用于结合Router合成完整的路由链接
+	baseUrl = "okay://page/", // 路由前缀：用于结合Route合成完整的路由链接
 	pack = "com.okay.router") // 路由表生成包名：配置后。路由表生成类将会放置于此包下
 class App extends Application {...}
 ```
@@ -59,9 +59,9 @@ class App extends Application {...}
 - 为目标页指定路由规则链接
 
 ```
-// 在目标Activity上添加Router注解，添加对应的路由规则
+// 在目标Activity上添加Route注解，添加对应的路由规则
 // 同一目标页可以添加多个不同的路由链接。
-@Router({
+@Route({
 	// 可只指定path, 此种数据会与RouteConfig中的baseUrl进行结合:
 	// 最终完整链接为：okay://page/example
 	"example",
@@ -217,10 +217,10 @@ Router.create(url)
 **3. 指定目标的拦截器**：对指定的目标页面生效
 
 ```java
-// 在配置的Router的目标页，添加此RouteInterceptors注解即可。
+// 在配置的Route的目标页，添加此RouteInterceptors注解即可。
 // 在此配置的拦截器，当使用路由启动此页面时，即可被触发。
 @RouteInterceptors({CustomRouteInterceptor.class})
-@Router("user")
+@Route("user")
 public class UserActivity extends BaseActivity {...}
 ```
 
@@ -304,8 +304,8 @@ Router.create("okay://page/user?username=okay&uid=123456")
 动作路由通过继承**ActionSupport**类进行创建：
 
 ```java
-// 与页面路由一样。添加Router注解配置路由链接即可。
-@Router("action/hello")
+// 与页面路由一样。添加Route注解配置路由链接即可。
+@Route("action/hello")
 public class SayHelloAction extends ActionSupport {
 	@Override
 	public void onRouteTrigger(Context context, Bundle data) {
@@ -337,7 +337,7 @@ Router.create(url).setExecutor(executor).open(context);
 
 ```java
 @RouteExecutor(CustomExecutor.class)
-@Router("action/hello")
+@Route("action/hello")
 public class SayHelloAction extends ActionSupport {...}
 ```
 
@@ -356,10 +356,10 @@ Uri lauchUri = bundle.getParcelable(Router.RAW_URI);
 
 对象路由(`InstanceRouter`)是在Router `2.8.+`版本以上添加的新型路由，主要作用为通过指定路由链接，创建出具体的对象实例提供使用：
 
-`对象路由`的配置方式是与`页面路由`,`动作路由`类似。也是直接在指定类上添加Router注解，如此处将UserFragment作为实例创建目标：
+`对象路由`的配置方式是与`页面路由`,`动作路由`类似。也是直接在指定类上添加Route注解，如此处将UserFragment作为实例创建目标：
 
 ```
-@Router("okay://page/fragment/user")
+@Route("okay://page/fragment/user")
 class UserFragment extends Fragment
 		// 实现ICreatorInjector接口。复写方法以接收传参
 		implements ICreatorInjector{
@@ -383,7 +383,7 @@ UserFragment user = Router.createInstanceRouter("okay://page/fragment/user")
 
 ```
 // 对任意类添加路由配置注解
-@Router("okay://pojo/user")
+@Route("okay://pojo/user")
 class Uesr implements ICreatorInjector {
 	@Override
 	public void inject(Bundle bundle) {
