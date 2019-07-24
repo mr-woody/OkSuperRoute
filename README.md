@@ -36,7 +36,7 @@ allprojects {
 }
 dependencies {
     implementation 'com.okay.router:router-api:1.0.0-20190724.025004-3'
-    annotationProcessor 'com.okay.router.compiler:router-compiler:1.0.0-20190722.032556-1'
+    annotationProcessor 'com.okay.router.compiler:router-compiler:1.0.0-20190724.031423-2'
 
     //插件开发使用（这里功能存在一定问题，等二期完善）
     //implementation 'com.okay.router.remote:router-remote:1.0.2-20190724.030025-2'
