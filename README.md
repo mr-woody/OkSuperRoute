@@ -354,7 +354,7 @@ Uri lauchUri = bundle.getParcelable(Router.RAW_URI);
 
 ### 使用对象路由
 
-对象路由(`InstanceRouter`)是在Router `2.8.+`版本以上添加的新型路由，主要作用为通过指定路由链接，创建出具体的对象实例提供使用：
+对象路由(`InstanceRouter`)，主要作用为通过指定路由链接，创建出具体的对象实例提供使用：
 
 `对象路由`的配置方式是与`页面路由`,`动作路由`类似。也是直接在指定类上添加Route注解，如此处将UserFragment作为实例创建目标：
 
