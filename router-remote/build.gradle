@@ -26,7 +26,8 @@ android {
 
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
-    api project(':router-api')
+    //api project(':router-api')
+    api 'com.okay.router:router-api:1.0.0-20190724.025004-3'
 }
 
 apply from: 'upload.gradle'

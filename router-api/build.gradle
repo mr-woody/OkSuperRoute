@@ -33,7 +33,9 @@ android {
 
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
-    api project(':router-annotation')
+    //api project(':router-annotation')
+    api 'com.okay.router.annotation:router-annotation:1.+'
+
 }
 
-apply from: 'upload.gradle'
+//apply from: 'upload.gradle'

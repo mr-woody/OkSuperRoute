@@ -7,6 +7,7 @@ buildscript {
     repositories {
         maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
         maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
+        maven{ url "http://10.60.0.100:8081/repository/okayclient_snapshot/"}
         google()
         jcenter()
     }
@@ -25,7 +26,7 @@ allprojects {
     repositories {
         maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
         maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
-        //maven{ url "http://10.60.0.100:8081/repository/okayclient/"}
+        maven{ url "http://10.60.0.100:8081/repository/okayclient_snapshot/"}
         google()
         jcenter()
         maven { url 'https://jitpack.io' }
@@ -50,6 +51,14 @@ ext {
     user = 'yuetao'
     maven_url = 'http://10.60.0.100:8081/repository/okayclient_snapshot/'
 
+
+    //router-annotation
+    router_annotation = [
+            version : '1.0.0-SNAPSHOT',
+            group_id : 'com.okay.router.annotation',
+            artifact_id : 'router-annotation',
+            description : 'Android router-annotation library',
+    ]
 
     //router_api
     router_api = [

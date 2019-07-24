@@ -7,3 +7,4 @@ dependencies {
 targetCompatibility = '1.7'
 sourceCompatibility = '1.7'
 
+//apply from: 'upload.gradle'
