@@ -74,7 +74,6 @@ class Sample1Activity : ToolBarActivity() {
 
         Router.create("okay://page/intent/printer")
                 .addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)// 添加启动标记位：Intent.addFlag()
-                .requestCode(1001)// 指定请求码，使用startActivityForResult跳转
                 .addExtras(data)// 添加额外数据。将放入Intent中进行传递:Intent.putExtras(data)
                 .addInterceptor(LoginInterceptor())// 添加拦截器,若添加有多个拦截器，将被依次触发
                 .setCallback(object: RouteCallback {// 添加路由回调
@@ -97,6 +96,7 @@ class Sample1Activity : ToolBarActivity() {
     
     fun toResultActivity() {
         Router.create("okay://page/result")
+                .requestCode(1001)// 指定请求码，使用startActivityForResult跳转
                 // 指定返回数据回调
                 .resultCallback { resultCode, data -> Toast.makeText(this, "返回码是$resultCode", Toast.LENGTH_SHORT).show() }
                 .open(this)

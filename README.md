@@ -308,7 +308,7 @@ Router.create("okay://page/user?username=okay&uid=123456")
 @Route("action/hello")
 public class SayHelloAction extends ActionSupport {
 	@Override
-	public void onRouteTrigger(Context context, Bundle data) {
+	public void invoke(Context context, Bundle data) {
 		//  启动动作路由成功会触发调用此方法。
 		Toast.makeText(context, "Hello! this is an action route!", Toast.LENGTH_SHORT).show();
 	}
