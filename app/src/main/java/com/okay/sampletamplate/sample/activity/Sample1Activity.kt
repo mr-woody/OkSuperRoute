@@ -14,6 +14,7 @@ import com.okay.router.launcher.Launcher
 import com.okay.router.module.RouteRule
 import com.okay.sampletamplate.ToolBarActivity
 import com.okay.sampletamplate.sample.R
+import com.okay.sampletamplate.sample.pojo.AccountInfo
 
 /**
  * @author :Created by yuetao
@@ -70,6 +71,7 @@ class Sample1Activity : ToolBarActivity() {
         val data = Bundle().apply {
             putString("用户名", "测试")
             putString("密码", "你猜")
+            putParcelable("data", AccountInfo("1","185XXX085","token",1))
         }
 
         Router.create("okay://page/intent/printer")

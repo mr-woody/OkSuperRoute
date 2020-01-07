@@ -62,7 +62,7 @@ ext {
 
     //router_api
     router_api = [
-            version : '1.0.0-SNAPSHOT',
+            version : '1.0.1-SNAPSHOT',
             group_id : 'com.okay.router',
             artifact_id : 'router-api',
             description : 'Android router-api library',

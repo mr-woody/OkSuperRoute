@@ -26,7 +26,7 @@ public abstract class Launcher {
     protected RouteRule rule;
     protected Bundle remote;
 
-    protected Activity resumeContext;
+    protected Context resumeContext;
     protected ActivityResultCallback resultCallback;
     protected Bundle options;
 

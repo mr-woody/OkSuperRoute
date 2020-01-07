@@ -42,7 +42,7 @@ public class DefaultActivityLauncher extends ActivityLauncher{
 
     @Override
     public void open(Context context) {
-        Activity resume = resumeContext;
+        Context resume = resumeContext;
         if (resume != null) {
             context = resume;
         }
