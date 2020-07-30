@@ -51,7 +51,6 @@ public abstract class Launcher {
         this.rule = rule;
         this.remote = remote;
 
-        resumeContext = extras.getValue(Constants.KEY_RESUME_CONTEXT);
         resultCallback = extras.getValue(Constants.KEY_RESULT_CALLBACK);
         options = extras.getValue(Constants.KEY_ACTIVITY_OPTIONS);
 

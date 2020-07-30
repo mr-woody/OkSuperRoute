@@ -1,4 +1,4 @@
-package cz.myapplication
+package com.okay.sampletamplate.data
 
 import android.content.Context
 import android.support.v4.view.PagerAdapter

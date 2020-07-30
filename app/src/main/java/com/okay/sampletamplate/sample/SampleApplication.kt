@@ -4,7 +4,7 @@ import android.app.Application
 import com.okay.router.Router
 import com.okay.router.annotation.RouteConfig
 import com.okay.router.configs.RouterConfiguration
-import com.okay.router.demo.interceptors.DefaultInterceptor
+import com.okay.sampletamplate.sample.interceptors.DefaultInterceptor
 import com.okay.sample.RouterRuleCreator
 import com.okay.sampletamplate.configurtion.Document
 import com.okay.sampletamplate.configurtion.TemplateConfiguration

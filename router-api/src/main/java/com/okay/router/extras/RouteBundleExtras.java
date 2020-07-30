@@ -133,9 +133,15 @@ public final class RouteBundleExtras implements Parcelable{
         RouteCallback callback = TempDataCache.get().get(in.readInt());
         Map<String, Object> additionalMap = TempDataCache.get().get(in.readInt());
 
-        if (interceptors != null) this.interceptors = interceptors;
-        if (callback != null) this.callback = callback;
-        if (additionalMap != null) this.additionalMap = additionalMap;
+        if (interceptors != null) {
+            this.interceptors = interceptors;
+        }
+        if (callback != null) {
+            this.callback = callback;
+        }
+        if (additionalMap != null) {
+            this.additionalMap = additionalMap;
+        }
     }
 
     public static final Creator<RouteBundleExtras> CREATOR = new Creator<RouteBundleExtras>() {

@@ -1,7 +1,7 @@
 package com.okay.sampletamplate.configurtion
 
 import android.app.Application
-import com.okay.sample.library.lifecycle.SampleActivityLifecycleCallback
+import com.okay.sampletamplate.lifecycle.SampleActivityLifecycleCallback
 import com.okay.sampletamplate.FuncTemplate
 
 /**

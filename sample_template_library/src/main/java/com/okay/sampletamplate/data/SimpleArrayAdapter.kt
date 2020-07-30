@@ -1,4 +1,4 @@
-package com.okay.widgets.common.sample.data
+package com.okay.sampletamplate.data
 
 import android.content.Context
 import android.support.annotation.ArrayRes

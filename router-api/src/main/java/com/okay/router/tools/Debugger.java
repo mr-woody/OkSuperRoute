@@ -16,38 +16,62 @@ public class Debugger {
     }
 
     public static void d(String msg, Object... args) {
-        if (!sEnableLog) return;
-        if (TextUtils.isEmpty(msg)) return;
+        if (!sEnableLog) {
+            return;
+        }
+        if (TextUtils.isEmpty(msg)) {
+            return;
+        }
         Log.d(Debugger.LOG_TAG, format(msg, args));
     }
 
     public static void i(String msg, Object... args) {
-        if (!sEnableLog) return;
-        if (TextUtils.isEmpty(msg)) return;
+        if (!sEnableLog) {
+            return;
+        }
+        if (TextUtils.isEmpty(msg)) {
+            return;
+        }
         Log.i(Debugger.LOG_TAG, format(msg, args));
     }
 
     public static void w(String msg, Object... args) {
-        if (!sEnableLog) return;
-        if (TextUtils.isEmpty(msg)) return;
+        if (!sEnableLog) {
+            return;
+        }
+        if (TextUtils.isEmpty(msg)) {
+            return;
+        }
         Log.w(Debugger.LOG_TAG, format(msg, args));
     }
 
     public static void w(Throwable t) {
-        if (!sEnableLog) return;
-        if (t == null) return;
+        if (!sEnableLog) {
+            return;
+        }
+        if (t == null) {
+            return;
+        }
         Log.w(Debugger.LOG_TAG, t);
     }
 
     public static void e(String msg, Object... args) {
-        if (!sEnableLog) return;
-        if (TextUtils.isEmpty(msg)) return;
+        if (!sEnableLog) {
+            return;
+        }
+        if (TextUtils.isEmpty(msg)) {
+            return;
+        }
         Log.e(Debugger.LOG_TAG, format(msg, args));
     }
 
     public static void e(Throwable t) {
-        if (!sEnableLog) return;
-        if (t == null) return;
+        if (!sEnableLog) {
+            return;
+        }
+        if (t == null) {
+            return;
+        }
         Log.e(Debugger.LOG_TAG, "", t);
     }
 

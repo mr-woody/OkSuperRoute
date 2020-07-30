@@ -188,11 +188,19 @@ Router.create(url).resultCallback(resultCallback).open(context)
 拦截器的接口名为**RouteInterceptor**
 
 ```java
-public interface RouteInterceptor{
-	// 在此进行状态判断。判断是否需要拦截此次路由事件，当返回true时，代表此次启动事件被拦截
-	boolean intercept (Uri uri, RouteBundleExtras extras, Context context);
-	// 当intercept方法返回true时，此方法被调用。
-	void onIntercepted(Uri uri, RouteBundleExtras extras, Context context);
+public interface RouteInterceptor {
+    void intercept(@NonNull ActionChain chain);
+
+    interface ActionChain {
+        // 表示当前拦截自己处理，不继续传递给下一个拦截器
+        void onIntercept();
+
+        // 分发给下一个拦截器
+        void proceed(@NonNull ActionRequest actionPost);
+
+        // 获取 ActionRequest
+        ActionRequest action();
+    }
 }
 ```
 

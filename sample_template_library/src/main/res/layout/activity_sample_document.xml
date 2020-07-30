@@ -14,7 +14,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/markdownView"/>
 
-    <com.okay.sample.library.markdown.MarkdownView
+    <com.okay.sampletamplate.markdown.MarkdownView
             android:id="@+id/markdownView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

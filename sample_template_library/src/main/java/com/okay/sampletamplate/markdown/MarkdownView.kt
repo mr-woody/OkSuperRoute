@@ -1,4 +1,4 @@
-package com.okay.sample.library.markdown
+package com.okay.sampletamplate.markdown
 
 import android.content.Context
 import android.os.Build

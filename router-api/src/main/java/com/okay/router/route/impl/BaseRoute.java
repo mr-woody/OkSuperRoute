@@ -10,15 +10,16 @@ import com.okay.router.configs.RouterConfiguration;
 import com.okay.router.exception.InterceptorException;
 import com.okay.router.extras.RouteBundleExtras;
 import com.okay.router.interceptors.RouteInterceptor;
+import com.okay.router.interceptors.RealInterceptorChain;
 import com.okay.router.interceptors.RouteInterceptorAction;
 import com.okay.router.launcher.Launcher;
+import com.okay.router.module.ActionRequest;
 import com.okay.router.module.RouteRule;
 import com.okay.router.parser.URIParser;
 import com.okay.router.route.IBaseRoute;
 import com.okay.router.route.IRoute;
 import com.okay.router.callback.InternalCallback;
 import com.okay.router.tools.Cache;
-import com.okay.router.configs.Constants;
 import com.okay.router.tools.Preconditions;
 
 import java.util.ArrayList;
@@ -53,7 +54,7 @@ public abstract class BaseRoute<T extends IBaseRoute> implements IRoute, IBaseRo
     @Override
     public final void open(Context context) {
         try {
-            checkInterceptor(uri, callback.getExtras(), context,getInterceptors());
+            getActionInterceptorChain(context,uri, callback.getExtras());
             launcher.set(uri, bundle, callback.getExtras(), routeRule, remote);
             launcher.open(context);
             callback.onOpenSuccess(routeRule);
@@ -71,6 +72,7 @@ public abstract class BaseRoute<T extends IBaseRoute> implements IRoute, IBaseRo
     }
 
     // =============RouteInterceptor operation===============
+    @Override
     public T addInterceptor(RouteInterceptor interceptor) {
         if (callback.getExtras() != null) {
             callback.getExtras().addInterceptor(interceptor);
@@ -135,14 +137,10 @@ public abstract class BaseRoute<T extends IBaseRoute> implements IRoute, IBaseRo
     protected abstract Launcher obtainLauncher() throws Exception;
 
 
-    protected void checkInterceptor(Uri uri, RouteBundleExtras extras, Context context, List<RouteInterceptor> interceptors) {
-        for (RouteInterceptor interceptor : interceptors) {
-            if (interceptor.intercept(uri,extras,context)) {
-                extras.putValue(Constants.KEY_RESUME_CONTEXT, context);
-                interceptor.onIntercepted(uri,extras,context);
-                throw new InterceptorException(interceptor);
-            }
-        }
+    protected void getActionInterceptorChain(Context context,Uri uri, RouteBundleExtras extras) {
+        ActionRequest request = new ActionRequest(context,uri,extras);
+        RouteInterceptor.ActionChain chain = new RealInterceptorChain(getInterceptors(), 0, request);
+        chain.proceed(request);
     }
 
 }

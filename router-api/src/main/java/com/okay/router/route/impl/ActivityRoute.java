@@ -60,7 +60,7 @@ public class ActivityRoute extends BaseRoute<IActivityRoute> implements IActivit
     @Override
     public void open(Fragment fragment) {
         try {
-            checkInterceptor(uri, callback.getExtras(), fragment.getActivity(), getInterceptors());
+            getActionInterceptorChain(fragment.getActivity(),uri, callback.getExtras());
             ActivityLauncher activityLauncher = (ActivityLauncher) launcher;
             activityLauncher.set(uri, bundle, callback.getExtras(), routeRule, remote);
             activityLauncher.open(fragment);
@@ -68,7 +68,6 @@ public class ActivityRoute extends BaseRoute<IActivityRoute> implements IActivit
         } catch (Throwable e) {
             callback.onOpenFailed(e);
         }
-
         callback.invoke(fragment.getActivity());
     }
 

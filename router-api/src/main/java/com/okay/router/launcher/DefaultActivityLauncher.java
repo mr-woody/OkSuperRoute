@@ -42,11 +42,6 @@ public class DefaultActivityLauncher extends ActivityLauncher{
 
     @Override
     public void open(Context context) {
-        Context resume = resumeContext;
-        if (resume != null) {
-            context = resume;
-        }
-
         ActivityResultCallback callback = resultCallback;
         int requestCode = extras.getRequestCode();
 

@@ -1,9 +1,6 @@
 package com.okay.sampletamplate.configurtion
 
-import android.app.Activity
-import android.app.Application
 import android.content.Context
-import com.okay.sample.library.lifecycle.SampleActivityLifecycleCallback
 import com.okay.sampletamplate.FuncTemplate
 import com.okay.sampletamplate.item.SampleItem
 import java.lang.IllegalArgumentException

@@ -1,35 +1,25 @@
-
 package com.okay.router.interceptors;
 
-import android.content.Context;
-import android.net.Uri;
+import android.support.annotation.NonNull;
 
-import com.okay.router.Router;
-import com.okay.router.extras.RouteBundleExtras;
+import com.okay.router.module.ActionRequest;
 
 /**
- * An interceptor interface
+ * 拦截器
+ * @author Created by woodys on 2020/7/29.
+ * @email yuetao@okay.cn
  */
-public interface RouteInterceptor{
+public interface RouteInterceptor {
+    void intercept(@NonNull ActionChain chain);
 
-    /**
-     * Whether or not be interrupted when open activity by uri
-     * @param uri uri the uri to open
-     * @param context context
-     * @param extras some extras data for route,
-     *               sometimes is null when you not use
-     *               {@link Router#getBaseRoute()} to set some extras data into it
-     * @return true if should be intercepted
-     */
-    boolean intercept (Uri uri, RouteBundleExtras extras, Context context);
+    interface ActionChain {
+        // 表示当前拦截自己处理，不继续传递给下一个拦截器
+        void onIntercept();
 
-    /**
-     * This method should be invoked when you has been intercepted
-     * @param uri uri the uri to open
-     * @param context context
-     * @param extras some extras data for route,
-     *               sometimes is null when you not use
-     *               {@link Router#getBaseRoute()} to set some extras data into it
-     */
-    void onIntercepted(Uri uri, RouteBundleExtras extras, Context context);
+        // 分发给下一个拦截器
+        void proceed(@NonNull ActionRequest actionPost);
+
+        // 获取 ActionRequest
+        ActionRequest action();
+    }
 }

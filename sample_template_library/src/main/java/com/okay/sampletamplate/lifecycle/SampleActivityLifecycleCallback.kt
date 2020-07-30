@@ -1,4 +1,4 @@
-package com.okay.sample.library.lifecycle
+package com.okay.sampletamplate.lifecycle
 
 import android.app.Activity
 import android.app.Application
@@ -9,7 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.okay.sampletamplate.MainFragment
 import com.okay.sampletamplate.R
-import kotlinx.android.synthetic.main.fragment_sample_main.view.*
 import java.lang.IllegalArgumentException
 
 /**
