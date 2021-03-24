@@ -9,11 +9,11 @@ import android.widget.Toast;
 import com.example.common_service.Pages;
 import com.example.common_service.base.BaseActivity;
 import com.example.common_service.utlis.ProcessUtil;
-import com.okay.router.Router;
-import com.okay.router.annotation.Route;
-import com.okay.router.annotation.RouteConfig;
+import com.woodys.router.Router;
+import com.woodys.router.annotation.Route;
+import com.woodys.router.annotation.RouteConfig;
 
-@RouteConfig(baseUrl = "okay://page/", pack = "com.okay.a")
+@RouteConfig(baseUrl = "woodys://page/", pack = "com.woodys.a")
 @Route(Pages.A_MAIN)
 public class MainActivity extends BaseActivity {
 

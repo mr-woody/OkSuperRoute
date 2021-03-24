@@ -5,7 +5,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <com.okay.sampletamplate.view.progress.ProgressBar
+    <com.woodys.sampletamplate.view.progress.ProgressBar
             android:id="@+id/progressBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -14,7 +14,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/markdownView"/>
 
-    <com.okay.sampletamplate.markdown.MarkdownView
+    <com.woodys.sampletamplate.markdown.MarkdownView
             android:id="@+id/markdownView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

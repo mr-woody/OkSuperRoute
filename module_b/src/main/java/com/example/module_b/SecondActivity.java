@@ -7,7 +7,7 @@ import android.widget.TextView;
 import com.example.common_service.Pages;
 import com.example.common_service.base.BaseActivity;
 import com.example.common_service.utlis.ProcessUtil;
-import com.okay.router.annotation.Route;
+import com.woodys.router.annotation.Route;
 
 @Route(Pages.B_SECOND)
 public class SecondActivity extends BaseActivity {

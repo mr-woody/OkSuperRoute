@@ -2,11 +2,11 @@ apply plugin: 'java'
 
 dependencies {
     implementation 'com.squareup:javapoet:1.7.0'
-    //implementation project(':router-annotation')
-    implementation 'com.okay.router.annotation:router-annotation:1.+'
+    implementation project(':router-annotation')
+    //implementation 'com.woodys.router.annotation:router-annotation:1.+'
 }
 
 targetCompatibility = '1.7'
 sourceCompatibility = '1.7'
 
-apply from: 'upload.gradle'
+//apply from: 'upload.gradle'

@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 
-    package="com.okay.router.remote">
+    package="com.woodys.router.remote">
 
     <application>
 
@@ -8,7 +8,7 @@
             android:process=":routerRemoteService"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.okay.router.action.REMOTE"/>
+                <action android:name="com.woodys.router.action.REMOTE"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </service>

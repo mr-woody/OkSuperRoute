@@ -5,9 +5,9 @@ buildscript {
     ext.kotlin_version = "1.2.30"
 
     repositories {
+        maven { url 'https://jitpack.io' }
         maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
         maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
-        maven{ url "http://10.60.0.100:8081/repository/okayclient_snapshot/"}
         google()
         jcenter()
     }
@@ -18,18 +18,18 @@ buildscript {
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
     }
 }
 
 allprojects {
     repositories {
+        maven { url 'https://jitpack.io' }
         maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
         maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
-        maven{ url "http://10.60.0.100:8081/repository/okayclient_snapshot/"}
         google()
         jcenter()
-        maven { url 'https://jitpack.io' }
+
     }
 }
 
@@ -49,13 +49,13 @@ ext {
 
     //remote repository information
     user = 'yuetao'
-    maven_url = 'http://10.60.0.100:8081/repository/okayclient_snapshot/'
+    maven_url = 'http://xxx/repository/xxx_snapshot/'
 
 
     //router-annotation
     router_annotation = [
             version : '1.0.0-SNAPSHOT',
-            group_id : 'com.okay.router.annotation',
+            group_id : 'com.woodys.router.annotation',
             artifact_id : 'router-annotation',
             description : 'Android router-annotation library',
     ]
@@ -63,7 +63,7 @@ ext {
     //router_api
     router_api = [
             version : '1.0.1-SNAPSHOT',
-            group_id : 'com.okay.router',
+            group_id : 'com.woodys.router',
             artifact_id : 'router-api',
             description : 'Android router-api library',
     ]
@@ -73,7 +73,7 @@ ext {
     //router-compiler
     router_compiler = [
             version : '1.0.0-SNAPSHOT',
-            group_id : 'com.okay.router.compiler',
+            group_id : 'com.woodys.router.compiler',
             artifact_id : 'router-compiler',
             description : 'Android router-compiler library',
     ]
@@ -82,7 +82,7 @@ ext {
     //router-remote
     router_remote = [
             version : '1.0.2-SNAPSHOT',
-            group_id : 'com.okay.router.remote',
+            group_id : 'com.woodys.router.remote',
             artifact_id : 'router-remote',
             description : 'Android router-remote library'
     ]

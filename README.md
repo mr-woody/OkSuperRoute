@@ -21,7 +21,7 @@
    * 使用对象路由 创建实体bean
 
 ### 演示下载
-[*Sample Apk*](http://git.okjiaoyu.cn/stu/oksuperroute/raw/master/apk/app-debug.apk)
+[*Sample Apk*](/apk/app-debug.apk)
 
 
 ### 如何开始
@@ -29,17 +29,16 @@
 ```
 allprojects {
     repositories {
-        google()
-        jcenter()
-        maven{ url "http://10.60.0.100:8081/repository/okayclient_snapshot/"}
+        ...
+        maven { url 'https://jitpack.io' }
     }
 }
 dependencies {
-    implementation 'com.okay.router:router-api:1.0.1-SNAPSHOT'
-    annotationProcessor 'com.okay.router.compiler:router-compiler:1.0.0-SNAPSHOT'
+    implementation 'com.github.mr-woody.OkSuperRoute:router-api:1.0.0'
+    annotationProcessor 'com.github.mr-woody.OkSuperRoute:router-compiler:1.0.0'
 
     //插件开发使用（这里功能存在一定问题，等二期完善）
-    //implementation 'com.okay.router.remote:router-remote:1.0.2-SNAPSHOT'
+    //implementation 'com.github.mr-woody.OkSuperRoute:router-remote:1.0.0'
 }
 ```
 
@@ -51,8 +50,8 @@ dependencies {
 
 ```
 @RouteConfig(
-	baseUrl = "okay://page/", // 路由前缀：用于结合Route合成完整的路由链接
-	pack = "com.okay.router") // 路由表生成包名：配置后。路由表生成类将会放置于此包下
+	baseUrl = "woodys://page/", // 路由前缀：用于结合Route合成完整的路由链接
+	pack = "com.woodys.router") // 路由表生成包名：配置后。路由表生成类将会放置于此包下
 class App extends Application {...}
 ```
 
@@ -63,7 +62,7 @@ class App extends Application {...}
 // 同一目标页可以添加多个不同的路由链接。
 @Route({
 	// 可只指定path, 此种数据会与RouteConfig中的baseUrl进行结合:
-	// 最终完整链接为：okay://page/example
+	// 最终完整链接为：woodys://page/example
 	"example",
 	// 也可直接指定完整链接
 	"total://example"
@@ -86,7 +85,7 @@ RouterConfiguration.get().addRouteCreator(new RouterRuleCreator())
 还是以上面的example为例。要使用Router启动ExampleActivity, 使用以下链接进行跳转
 
 ```java
-Router.create("okay://page/example").open(context)
+Router.create("woodys://page/example").open(context)
 ```
 
 ### 启动浏览器打开网页
@@ -242,11 +241,11 @@ Router.resume(uri, extras).open(context);
 
 光这样看有点不太直观。我们举个最经典的**登录检查拦截**案例作为说明：
 
-![](http://git.okjiaoyu.cn/stu/oksuperroute/raw/master/image/image1.png)
+![](/image/image1.png)
 
 当不使用路由进行跳转时，这种情况就会导致你本地写上了大量的登录判断逻辑代码。这在维护起来是很费劲的。而且也非常不灵活，而使用拦截器的方式来做登录检查，就会很方便了：
 
-![](http://git.okjiaoyu.cn/stu/oksuperroute/raw/master/image/image2.png)
+![](/image/image2.png)
 
 下面是一个简单的登录拦截实现：
 
@@ -295,11 +294,11 @@ public class LoginActivity extends BaseActivity {
 Router支持自动从url中解析参数进行传递：
 
 ```java
-Router.create("okay://page/user?username=okay&uid=123456")
+Router.create("woodys://page/user?username=woodys&uid=123456")
 	.open(context);
 ```
 
-上面的链接即代表：跳转到**okay://page/user**页面，并传递username和uid数据过去。
+上面的链接即代表：跳转到**woodys://page/user**页面，并传递username和uid数据过去。
 
 
 
@@ -326,7 +325,7 @@ public class SayHelloAction extends ActionSupport {
 动作路由的启动方式与页面路由一致:
 
 ```java
-Router.create("okay://page/action/hello").open(context)
+Router.create("woodys://page/action/hello").open(context)
 ```
 
 #### 指定动作路由的执行线程
@@ -367,7 +366,7 @@ Uri lauchUri = bundle.getParcelable(Router.RAW_URI);
 `对象路由`的配置方式是与`页面路由`,`动作路由`类似。也是直接在指定类上添加Route注解，如此处将UserFragment作为实例创建目标：
 
 ```
-@Route("okay://page/fragment/user")
+@Route("woodys://page/fragment/user")
 class UserFragment extends Fragment
 		// 实现ICreatorInjector接口。复写方法以接收传参
 		implements ICreatorInjector{
@@ -382,7 +381,7 @@ class UserFragment extends Fragment
 然后即可通过路由链接启动并获取UserFragment实例：
 
 ```
-UserFragment user = Router.createInstanceRouter("okay://page/fragment/user")
+UserFragment user = Router.createInstanceRouter("woodys://page/fragment/user")
 		.addExtras(bundle)// 也可以添加额外参数
 		.createInstance<UserFragment>()// 获取具体实例进行使用
 ```
@@ -391,7 +390,7 @@ UserFragment user = Router.createInstanceRouter("okay://page/fragment/user")
 
 ```
 // 对任意类添加路由配置注解
-@Route("okay://pojo/user")
+@Route("woodys://pojo/user")
 class Uesr implements ICreatorInjector {
 	@Override
 	public void inject(Bundle bundle) {
@@ -400,13 +399,10 @@ class Uesr implements ICreatorInjector {
 }
 
 // 然后通过指定的链接，直接获取实例
-User user = Router.createInstanceRouter("okay://pojo/user")
+User user = Router.createInstanceRouter("woodys://pojo/user")
 			.createInstance<User>()
 ```
 
 
 ### 其他文档
-* [ChangeLog](http://git.okjiaoyu.cn/stu/oksuperroute/blob/master/document/CHANGE_LOG.md)
-
-
-![](http://git.okjiaoyu.cn/stu/oksuperroute/raw/master/image/author.png)
+* [ChangeLog](/document/CHANGE_LOG.md)
