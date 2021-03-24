@@ -108,9 +108,4 @@ jitpack{
         name "router-compiler"
         group "com.github.mr-woody"
     }
-    module{
-        //对应的library name
-        name "router-remote"
-        group "com.github.mr-woody"
-    }
 }

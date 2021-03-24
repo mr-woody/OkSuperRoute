@@ -2,8 +2,8 @@ apply plugin: 'java'
 
 dependencies {
     implementation 'com.squareup:javapoet:1.7.0'
-    implementation project(':router-annotation')
-    //implementation 'com.woodys.router.annotation:router-annotation:1.+'
+    //implementation project(':router-annotation')
+    implementation 'com.github.mr-woody.OkSuperRoute:router-annotation:1.0.0'
 }
 
 targetCompatibility = '1.7'

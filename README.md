@@ -34,11 +34,8 @@ allprojects {
     }
 }
 dependencies {
-    implementation 'com.github.mr-woody.OkSuperRoute:router-api:1.0.0'
-    annotationProcessor 'com.github.mr-woody.OkSuperRoute:router-compiler:1.0.0'
-
-    //插件开发使用（这里功能存在一定问题，等二期完善）
-    //implementation 'com.github.mr-woody.OkSuperRoute:router-remote:1.0.0'
+    implementation 'com.github.mr-woody.OkSuperRoute:router-api:1.1.0'
+    annotationProcessor 'com.github.mr-woody.OkSuperRoute:router-compiler:1.1.0'
 }
 ```
 
