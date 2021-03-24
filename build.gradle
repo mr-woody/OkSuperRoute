@@ -13,12 +13,12 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.4'
-
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+        classpath "com.github.dcendents:android-maven-gradle-plugin:2.1"
+        classpath 'com.github.mr-woody.UploadMavenPlugin:jitpack:1.2.0'
     }
 }
 
@@ -87,4 +87,29 @@ ext {
             description : 'Android router-remote library'
     ]
 
+}
+
+apply plugin: 'jitpack.io.upload'
+jitpack{
+    module{
+        //对应的library name
+        name "router-annotation"
+        //对应格式为com.github.[YourUsername],例如：https://github.com/mr-woody/UploadMavenPlugin ,那么对应的UserName为：mr-woody
+        group "com.github.mr-woody"
+    }
+    module{
+        //对应的library name
+        name "router-api"
+        group "com.github.mr-woody"
+    }
+    module{
+        //对应的library name
+        name "router-compiler"
+        group "com.github.mr-woody"
+    }
+    module{
+        //对应的library name
+        name "router-remote"
+        group "com.github.mr-woody"
+    }
 }
