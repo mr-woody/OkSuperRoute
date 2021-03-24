@@ -89,6 +89,7 @@ ext {
 
 }
 
+
 apply plugin: 'jitpack.io.upload'
 jitpack{
     module{
