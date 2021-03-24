@@ -34,8 +34,8 @@ allprojects {
     }
 }
 dependencies {
-    implementation 'com.github.mr-woody.OkSuperRoute:router-api:1.1.0'
-    annotationProcessor 'com.github.mr-woody.OkSuperRoute:router-compiler:1.1.0'
+    implementation 'com.github.mr-woody.OkSuperRoute:router-api:1.0.2'
+    annotationProcessor 'com.github.mr-woody.OkSuperRoute:router-compiler:1.0.2'
 }
 ```
 
