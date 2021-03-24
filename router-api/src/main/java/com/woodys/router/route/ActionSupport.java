@@ -1,0 +1,19 @@
+
+package com.woodys.router.route;
+
+import android.content.Context;
+import android.os.Bundle;
+
+/**
+ * <p>You can inherit from this class to create action routing event.
+ *
+ */
+public abstract class ActionSupport {
+
+    /**
+     * The callback method to received routing bundle data.
+     * @param context The context who launch the routing event.
+     * @param bundle The extras bundle data from {@link IBaseRoute#addExtras(Bundle)} and url parameters.
+     */
+    public abstract void invoke(Context context, Bundle bundle);
+}

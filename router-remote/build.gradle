@@ -22,7 +22,6 @@ android {
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
     api project(':router-api')
-    //api 'com.woodys.router:router-api:1.0.0-20190724.025004-3'
 }
 
 //apply from: 'upload.gradle'
